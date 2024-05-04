@@ -1,0 +1,67 @@
+body {
+    background: linear-gradient(70deg, #26446e, #2d5183);
+}
+
+.box1{
+    min-height: 50vh;
+    border-radius: 10px; 
+    box-shadow:  37px 37px 74px #26456f,
+             -37px -37px 74px #2e5385;
+    /* Mets la boite en fonctinalité Grid */
+    display: grid;
+    /* Ici on choisi 1 à 1 les choix des column partager en fr */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Ici on fait la même chose mais on décide avec le multiplicateur */
+    grid-template-rows: repeat(3, 1fr);
+    /* espace entre chaque élément enfant */
+    gap: 50px;
+
+}
+
+/* Méthode ou l'on séléctionne 1 à 1 les repaire de la boite */
+/*.box1 .item1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+} */
+
+/* on choisi ou l'objet 1 doit être en partant de 2 à 4 pour les colones et de 1 à 3 pour les lignes */
+/*.box1 .item1 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+} */
+
+/* Méthode ou l'on selectionne avec la fin des colonnes et lignes */
+/*.box1 .item1 {
+    grid-area: 1 / 2 / 3 / 4;
+} */
+
+/* Chevaucher des éléments */
+.box1 .item1 {
+    grid-column: 1 / -1;
+    grid-row: 1/2;
+}
+
+/* passer l'élément 1 devant au survolage */
+.box1 .item1:hover {
+    z-index: 1; 
+}
+
+.box1 .item6 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+} 
+
+.box1 * {
+    border: 1px solid darkmagenta;
+    background-color: azure;
+    border-radius: 10px;
+    display: grid;
+    /* Centrer colonne et ligne les éléments a l'interieur comme flexbox */
+    /* justify-content: center;
+    align-content: center; */
+    
+    /* Même chose mais en une ligne */
+    place-content: center;
+}
